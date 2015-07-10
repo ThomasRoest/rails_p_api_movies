@@ -1,6 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
-    httparty_get = HTTParty.get('http://www.omdbapi.com/?t=heat&y=&plot=short&r=json&tomatoes=true')
-    @response = httparty_get.parsed_response
+    if params[:search]
+      query = params[:search]
+      httparty_get = HTTParty.get("http://www.omdbapi.com/?t=#{query}")
+      @response = httparty_get.parsed_response
+    else
+      @response = {:title => "nope"}
+    end
   end
 end

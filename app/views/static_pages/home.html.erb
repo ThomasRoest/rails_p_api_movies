@@ -2,6 +2,15 @@
 
 <h2>Movie</h2>
 
+
+<%= form_tag(home_path) do %>
+  <%= label_tag('Search the database') %>
+  <%= search_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<hr>
+
+<%= debug params %>
 <table class="table-movie">
   <tr>
     <th>Key</th>
