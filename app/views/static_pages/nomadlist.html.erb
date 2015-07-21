@@ -1,0 +1,35 @@
+<%= button_to "retrieve data", nomadlist_path(cities: "all") %>
+
+
+<!-- <h1>Nomadlist</h1> -->
+<%#= @response %>
+
+<%#= @response.keys %>
+<%#= @response.values %>
+<hr>
+
+<%#= @response %>
+
+
+<ul>
+  <% @response.each do |key, value| %>
+    <li>
+      <strong><%= key %></strong>
+      <%= value %>
+      <%#= link_to key, show_city_path(city: key) %>
+      <!-- <strong>Key</strong> -->
+      <%#= link_to value %>
+    </li>
+    
+
+
+
+    <li>
+      <!-- <strong>value</strong> -->
+      <%#= value %>
+    </li>
+  <% end %>
+
+</ul>
+
+<%#= link_to "home", root_path(name: 2342) %>

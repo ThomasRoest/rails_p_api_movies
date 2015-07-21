@@ -1,31 +1,4 @@
-<h1>Movie DB api</h1>
+<h1>Home</h1>
 
-<h2>Movie</h2>
-
-
-<%= form_tag(home_path) do %>
-  <%= label_tag('Search the database') %>
-  <%= search_field_tag(:search) %>
-  <%= submit_tag("Search") %>
-<% end %>
-<hr>
-
-<%= debug params %>
-<table class="table-movie">
-  <tr>
-    <th>Key</th>
-    <th>Value</th>
-  </tr>
-
-  <% @response.each do |key, value| %>
-  <tr>
-    <td><%= key %></td>
-    <td><%= value %></td>
-  </tr>
-<% end %>
- 
-  
-</table>
-
-
-
+<%= link_to "movies", movies_path %>
+<%= link_to "nomadlist", nomadlist_path %>

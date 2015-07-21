@@ -1,0 +1,29 @@
+
+
+
+<%#= @city.fetch("info") %>
+
+
+<%= image_tag("https://nomadlist.com" + @city.values_at("media")[0]["image"]["500"]) %></p>
+
+
+
+<p><strong>City:</strong> <%= @city.values_at("info")[0]["city"]["name"] %></p>
+<p><strong>Country:</strong> <%= @city.values_at("info")[0]["country"]["name"] %></p>
+<p><strong>Region:</strong> <%= @city.values_at("info")[0]["region"]["name"] %></p>
+
+<strong>Weather:</strong> <% @city.values_at("info")[0]["weather"].each do |key, value| %>
+<p>
+  <%= key %>
+  <%= value %>
+</p>
+
+<% end %>
+
+<p><strong>People:</strong> <%= @city.values_at("people")[0]["checkins"] %></p>
+<p><strong>Nomadscore:</strong> <%= @city.values_at("scores")[0]["nomadScore"] %></p>
+
+<strong>Cost:</strong> <%= @city.values_at("cost").each do |key, value| %>
+  <%= key %> 
+  <%= value %>
+<% end %>

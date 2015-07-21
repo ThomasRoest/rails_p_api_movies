@@ -1,11 +1,23 @@
 class StaticPagesController < ApplicationController
+  # @@nomadlist_response = Nomadlist.find_cities
+
   def home
-    if params[:search]
-      query = params[:search]
-      httparty_get = HTTParty.get("http://www.omdbapi.com/?t=#{query}")
-      @response = httparty_get.parsed_response
+  end
+
+  def nomadlist
+    if params[:cities] == "all"
+      @response = Nomadlist.find_cities
     else
-      @response = {:title => "nope"}
+      @response = {:error => "could not retrieve data"}
     end
   end
+
+   # def show
+   #   @city = @@nomadlist_response[params[:city]]
+   #   # @info = @city["info"]
+   # end
+
+   def test
+
+   end
 end

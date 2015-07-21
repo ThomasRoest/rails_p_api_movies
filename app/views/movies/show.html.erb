@@ -1,0 +1,7 @@
+<%= image_tag(@poster) %>
+
+<ul>
+  <% @movie.each do |key, value| %>
+    <li><%= key %>: <%= value %></li>
+  <% end %>
+</ul>
